@@ -81,9 +81,26 @@ function GetLang($string)
           <option <?if ($this->element->payment_params->WidjetLang=='uk') echo 'selected';?> value="uk"><?=GetLang('SALE_HPS_WIDGET_LANG_TYPE_6')?></option>
           <option <?if ($this->element->payment_params->WidjetLang=='pl') echo 'selected';?> value="pl"><?=GetLang('SALE_HPS_WIDGET_LANG_TYPE_7')?></option>
           <option <?if ($this->element->payment_params->WidjetLang=='pt') echo 'selected';?> value="pt"><?=GetLang('SALE_HPS_WIDGET_LANG_TYPE_8')?></option>
+          <option <?if ($this->element->payment_params->WidjetLang=='cs-CZ') echo 'selected';?> value="cs-CZ"><?=GetLang('SALE_HPS_WIDGET_LANG_TYPE_9')?></option>
     </select>
 	</td>
 </tr>
+
+<tr>
+	<td class="key">
+		<label for="data[payment][payment_params][Widjetskin]"><?php
+			echo GetLang('SALE_HPS_CLOUDPAYMENT_WIDGET_SKIN');
+		?></label>
+	</td>
+	<td>
+    <select name="data[payment][payment_params][Widjetskin]">
+          <option <?if ($this->element->payment_params->Widjetskin=='classic') echo 'selected';?> value="classic" selected=""><?=GetLang('SALE_HPS_WIDGET_SKIN_0')?></option>
+          <option <?if ($this->element->payment_params->Widjetskin=='modern') echo 'selected';?> value="modern"><?=GetLang('SALE_HPS_WIDGET_SKIN_1')?></option>
+          <option <?if ($this->element->payment_params->Widjetskin=='mini') echo 'selected';?> value="mini"><?=GetLang('SALE_HPS_WIDGET_SKIN_2')?></option>
+    </select>
+	</td>
+</tr>
+
 
 <tr>
 	<td class="key">
@@ -111,8 +128,9 @@ function GetLang($string)
         <option <?if ($this->element->payment_params->PAYMENT_CURRENCY=='CNY') echo 'selected';?> value="CNY"><?=GetLang("CNY")?></option>
         <option <?if ($this->element->payment_params->PAYMENT_CURRENCY=='INR') echo 'selected';?> value="INR"><?=GetLang("INR")?></option>
         <option <?if ($this->element->payment_params->PAYMENT_CURRENCY=='BRL') echo 'selected';?> value="BRL"><?=GetLang("BRL")?></option>
-        <option <?if ($this->element->payment_params->PAYMENT_CURRENCY=='ZAL') echo 'selected';?> value="ZAL"><?=GetLang("ZAL")?></option>
+        <option <?if ($this->element->payment_params->PAYMENT_CURRENCY=='ZAR') echo 'selected';?> value="ZAL"><?=GetLang("ZAR")?></option>
         <option <?if ($this->element->payment_params->PAYMENT_CURRENCY=='UZS') echo 'selected';?> value="UZS"><?=GetLang("UZS")?></option>
+        <option <?if ($this->element->payment_params->PAYMENT_CURRENCY=='BGL') echo 'selected';?> value="BGL"><?=GetLang("BGL")?></option>
     </select>    
 	</td>
 </tr>
@@ -134,6 +152,18 @@ function GetLang($string)
 	</td>
 </tr>
 
+<tr>
+	<td class="key">
+		<label for="data[payment][payment_params][calculationPlace]"><?php
+			echo GetLang('SALE_HPS_CLOUDPAYMENT_calculationPlace');
+		?>
+	<span style="display:block;font-size:10px;"><?echo GetLang('SALE_HPS_CLOUDPAYMENT_calculationPlace_DESC');?></span>
+    </label>
+	</td>
+	<td>
+		<input type="text" name="data[payment][payment_params][calculationPlace]" value="<?php echo $this->escape(@$this->element->payment_params->calculationPlace); ?>" />
+	</td>
+</tr>
 
 <tr>
 	<td class="key">
@@ -241,11 +271,11 @@ function GetLang($string)
 	<td>
    <select name="data[payment][payment_params][NDS]">
         <option <?if ($this->element->payment_params->NDS=='') echo 'selected';?> value=""><?=GetLang('SALE_HPS_NDS_0')?></option>
-        <option <?if ($this->element->payment_params->NDS=='18') echo 'selected';?> value="18"><?=GetLang('SALE_HPS_NDS_1')?></option>
+        <option <?if ($this->element->payment_params->NDS=='20') echo 'selected';?> value="20"><?=GetLang('SALE_HPS_NDS_1')?></option>
         <option <?if ($this->element->payment_params->NDS=='10') echo 'selected';?> value="10"><?=GetLang('SALE_HPS_NDS_2')?></option>
         <option <?if ($this->element->payment_params->NDS=='0') echo 'selected';?> value="0"><?=GetLang('SALE_HPS_NDS_3')?></option>
         <option <?if ($this->element->payment_params->NDS=='110') echo 'selected';?> value="110"><?=GetLang('SALE_HPS_NDS_4')?></option>
-        <option <?if ($this->element->payment_params->NDS=='118') echo 'selected';?> value="118"><?=GetLang('SALE_HPS_NDS_5')?></option>
+        <option <?if ($this->element->payment_params->NDS=='120') echo 'selected';?> value="120"><?=GetLang('SALE_HPS_NDS_5')?></option>
     </select>
 	</td>
 </tr>
@@ -261,11 +291,11 @@ function GetLang($string)
 	<td>
     <select name="data[payment][payment_params][NDS_DELIVERY]">
         <option <?if ($this->element->payment_params->NDS_DELIVERY=='') echo 'selected';?> value=""><?=GetLang('SALE_HPS_NDS_0')?></option>
-        <option <?if ($this->element->payment_params->NDS_DELIVERY=='18') echo 'selected';?> value="18"><?=GetLang('SALE_HPS_NDS_1')?></option>
+        <option <?if ($this->element->payment_params->NDS_DELIVERY=='20') echo 'selected';?> value="20"><?=GetLang('SALE_HPS_NDS_1')?></option>
         <option <?if ($this->element->payment_params->NDS_DELIVERY=='10') echo 'selected';?> value="10"><?=GetLang('SALE_HPS_NDS_2')?></option>
         <option <?if ($this->element->payment_params->NDS_DELIVERY=='0') echo 'selected';?> value="0"><?=GetLang('SALE_HPS_NDS_3')?></option>
         <option <?if ($this->element->payment_params->NDS_DELIVERY=='110') echo 'selected';?> value="110"><?=GetLang('SALE_HPS_NDS_4')?></option>
-        <option <?if ($this->element->payment_params->NDS_DELIVERY=='118') echo 'selected';?> value="118"><?=GetLang('SALE_HPS_NDS_5')?></option>
+        <option <?if ($this->element->payment_params->NDS_DELIVERY=='120') echo 'selected';?> value="120"><?=GetLang('SALE_HPS_NDS_5')?></option>
     </select>
 	</td>
 </tr>
