@@ -60,12 +60,13 @@
 Настройки Void уведомлений: http://ваш_домен/bitrix/tools/sale_ps_result.php?action=void  
 Настройки Confirm уведомлений: http:/ваш_домен/bitrix/tools/sale_ps_result.php?action=confirm  
 Настройки Refund уведомлений: http://ваш_домен/bitrix/tools/sale_ps_result.php?action=refund  
- где **ваш_домен** нужно заменить на домен вашего сайта.
+где **ваш_домен** нужно заменить на домен вашего сайта.  
 
+#### Changelog
 
+= 1.1 = 
+* Добавление выбора дизайна виджета;  
+* Правка значений ставок НДС;
 
-
-
-
-
-
+= 1.0 =
+* Публикация модуля.

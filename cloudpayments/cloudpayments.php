@@ -91,8 +91,9 @@ function updOrd($order_id)
                       
                       if ($order->cart->billing_address->address_telephone) $Ar_params['phone']=$order->cart->billing_address->address_telephone;
                       else $Ar_params['phone']='';
-                      
+                      $this->addError("CHECKONLINE=".$params->CHECKONLINE);
                       if($params->CHECKONLINE==1):
+                       $this->addError($params->STATUS_PAY."!=".$order->order_status); 
                           if ($params->STATUS_PAY!=$order->order_status):
                                 $data=array();
                                 $items=array();
@@ -128,6 +129,7 @@ function updOrd($order_id)
                                 $this->addError(print_r($items,1));
                                 $data['cloudPayments']['customerReceipt']['Items']=$items;
                                 $data['cloudPayments']['customerReceipt']['taxationSystem']=$params->TYPE_NALOG; ///
+                                $data['cloudPayments']['customerReceipt']['calculationPlace']=$params->calculationPlace; ///
                                 $data['cloudPayments']['customerReceipt']['email']=$Ar_params['email']; 
                                 $data['cloudPayments']['customerReceipt']['phone']=$Ar_params['phone'];  
                           endif;
@@ -143,15 +145,17 @@ function updOrd($order_id)
                       $params=array(
                           "lang_widget"=>$Ar_params['WidjetLang'],
                           "publicId"=>$params->PublicID,
-                          "description"=>'',
+                          "description"=>$order->order_number, //назначение 
                           "sum"=>$order->cart->full_total->prices[0]->price_value,
                           "PAYMENT_CURRENCY"=>$params->PAYMENT_CURRENCY,//"RUB",
+                          "Widjetskin"=>$params->Widjetskin,//"classic",
                           "PAYMENT_BUYER_EMAIL"=>$Ar_params['email'],    
                           "PAYMENT_ID"=>$order->order_number,///order_id,
                           "PAYMENT_BUYER_ID"=>$order->cart->user_id,          
                           "CHECKONLINE"=>$params->CHECKONLINE,//"N",
                           "SUCCESS_URL"=>$params->SuccessURL,
                           "FAIL_URL"=>$params->FailURL,
+                          "calculationPlace"=>$params->calculationPlace,
                       );    
                         
                      $output = '
@@ -164,9 +168,10 @@ function updOrd($order_id)
                               var widget = new cp.CloudPayments({'."language:'".$params['lang_widget']."'});
                               widget.".$widget_f."({ // options
                                       publicId: '".trim(htmlspecialchars($params["publicId"]))."',
-                                      description: '".$params['description']."', 
+                                      description: 'Оплата заказа № ".$params['description']."', 
                                       amount: ".number_format($params['sum'], 2, '.', '').",
                                       currency: '".$params['PAYMENT_CURRENCY']."',
+                                      skin: '".$params['Widjetskin']."',
                                       email: '".$params['PAYMENT_BUYER_EMAIL']."',
                                       invoiceId: '".htmlspecialchars($params["PAYMENT_ID"])."',
                                       accountId: '".htmlspecialchars($params["PAYMENT_BUYER_ID"])."',";
@@ -215,8 +220,8 @@ function updOrd($order_id)
   public function onAfterOrderConfirm(&$order, &$methods, $method_id)   //ok  ----
   {
 		parent::onAfterOrderConfirm($order, $methods, $method_id);
-    $this->button=self::get_pay_button(&$order, &$methods, $method_id);  
-  //  self::addError(print_r($this->payment_params,true));        
+    $this->button=self::get_pay_button($order, $methods, $method_id);  
+    self::addError(print_r($this->payment_params,true));        
     return $this->showPage('end');
   } 
 
@@ -743,7 +748,7 @@ function updOrd($order_id)
             return $this->processconfirmAction($request,$params);     //
             die();
         }      
-        else if ($action == 'Cancel')
+        else if ($action == 'cancel')
         {
             return $this->processrefundAction($request,$params);     //ok
             die();

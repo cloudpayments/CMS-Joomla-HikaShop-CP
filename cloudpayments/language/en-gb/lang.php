@@ -20,12 +20,13 @@ $MESS["SALE_HPS_NALOG_TYPE_4"] = "Unified Agricultural Tax";
 $MESS["SALE_HPS_NALOG_TYPE_5"] = "Patent system of taxation";
 $MESS["VBCH_CLPAY_SPCP_DDESCR"] = "<a href=\"http://www.http://cloudpayments.ru/\"> CloudPayments </a>. <br> Receiving payments online using a bank card through the system CloudPayments <Br/>
 Go to the back-office CloudPayments  and change the following paths: <br/>
-Settings Notifications notification: http://". $_SERVER ['HTTP_HOST']." /bitrix/tools/sale_ps_result.php?action=check <br/>
-Pay notification settings: http://". $_SERVER ['HTTP_HOST']." /bitrix/tools/sale_ps_result.php?action=pay <br/>
-Fail notification settings: http://". $_SERVER ['HTTP_HOST']." /bitrix/tools/sale_ps_result.php?action=fail <br/> 
-Void notification settings: http://". $_SERVER['HTTP_HOST']." /bitrix/tools/sale_ps_result.php?action=void <br/>
-Confirm notification settings: http://". $_SERVER['HTTP_HOST']." /bitrix/tools/sale_ps_result.php?action=confirm <br/>
-Refund notification settings: http://". $_SERVER['HTTP_HOST']." /bitrix/tools/sale_ps_result.php?action=refund <br/><br/>";
+Settings Notifications notification: http://".$_SERVER['HTTP_HOST']."/index.php?option=com_hikashop&ctrl=checkout&task=notify&notif_payment=cloudpayments&tmpl=component&lang=ru&action=check<br/>
+Pay notification settings: http://".$_SERVER['HTTP_HOST']."/index.php?option=com_hikashop&ctrl=checkout&task=notify&notif_payment=cloudpayments&tmpl=component&lang=ru&action=pay<br/>
+Fail notification settings: http://".$_SERVER['HTTP_HOST']."/index.php?option=com_hikashop&ctrl=checkout&task=notify&notif_payment=cloudpayments&tmpl=component&lang=ru&action=fail<br/>
+Cancel notification settings: http://".$_SERVER['HTTP_HOST']."/index.php?option=com_hikashop&ctrl=checkout&task=notify&notif_payment=cloudpayments&tmpl=component&lang=ru&action=cancel<br/>
+Confirm notification settings: http://".$_SERVER['HTTP_HOST']."/index.php?option=com_hikashop&ctrl=checkout&task=notify&notif_payment=cloudpayments&tmpl=component&lang=ru&action=confirm<br/>
+Refund notification settings: http://".$_SERVER['HTTP_HOST']."/index.php?option=com_hikashop&ctrl=checkout&task=notify&notif_payment=cloudpayments&tmpl=component&lang=ru&action=refund<br/><br/>";
+
 $MESS["SALE_HPS_CLOUDPAYMENT_TYPE_SYSTEM"] = "Payment scheme type";
 $MESS["SALE_HPS_TYPE_SCHEME_0"] = "One-Step Payment";
 $MESS["SALE_HPS_TYPE_SCHEME_1"] = "Two-Step Payment";
@@ -46,6 +47,7 @@ $MESS["SALE_HPS_WIDGET_LANG_TYPE_5"] = "Kazakh ALMT";
 $MESS["SALE_HPS_WIDGET_LANG_TYPE_6"] = "Ukrainian EET";
 $MESS["SALE_HPS_WIDGET_LANG_TYPE_7"] = "Polish CET";
 $MESS["SALE_HPS_WIDGET_LANG_TYPE_8"] = "Portuguese CET";
+$MESS["SALE_HPS_WIDGET_LANG_TYPE_9"] = "Czech CET";
 
 $MESS["SALE_HPS_CLOUDPAYMENT_VAT_DELIVERY"] = "Select Shipping VAT, if necessary";
 $MESS["SALE_HPS_CLOUDPAYMENT_VAT_DELIVERY_DESC"] = "";
@@ -54,11 +56,11 @@ $MESS["VAT"] = "Select VAT for shipping if necessary";
 $MESS["NOT_VAT"] = "Without VAT";
 
 $MESS["DELIVERY_VAT0"] = "Without VAT";
-$MESS["DELIVERY_VAT1"] = "VAT 18%";
+$MESS["DELIVERY_VAT1"] = "VAT 20";
 $MESS["DELIVERY_VAT2"] = "VAT 10%";
 $MESS["DELIVERY_VAT3"] = "VAT 0%";
 $MESS["DELIVERY_VAT4"] = "estimated VAT 10/110";
-$MESS["DELIVERY_VAT5"] = "estimated VAT 18/118";
+$MESS["DELIVERY_VAT5"] = "estimated VAT 20/120";
 
 $MESS["STATUS_AU"] = "Authorized status";
 $MESS["STATUS_VOID"] = "Canceled status";
@@ -89,14 +91,15 @@ $MESS["INR"] = "Indian Rupee";
 $MESS["BRL"] = "Brazilian Real";
 $MESS["ZAL"] = "South African Rand";
 $MESS["UZS"] = "Uzbek Sum";
+$MESS["BGL"] = "Bulgarian Lev";
 
 $MESS["SALE_HPS_CLOUDPAYMENT_NDS"] = "VAT for the order";
 $MESS["SALE_HPS_CLOUDPAYMENT_NDS_DELIVERY"] = "Shipping VAT";
 
 $MESS["SALE_HPS_NDS_0"] = "Without VAT";
-$MESS["SALE_HPS_NDS_1"] = "VAT 18%";
-$MESS["SALE_HPS_NDS_2"] = "10% VAT";
+$MESS["SALE_HPS_NDS_1"] = "VAT 20%";
+$MESS["SALE_HPS_NDS_2"] = "VAT 10%";
 $MESS["SALE_HPS_NDS_3"] = "VAT 0%";
 $MESS["SALE_HPS_NDS_4"] = "estimated VAT 10/110";
-$MESS["SALE_HPS_NDS_5"] = "estimated VAT 18/118";
+$MESS["SALE_HPS_NDS_5"] = "estimated VAT 20/120";
 ?>
