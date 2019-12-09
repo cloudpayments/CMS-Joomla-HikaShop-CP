@@ -54,12 +54,12 @@
 ![0](pics/8.png)
 Список нужных вебхуков:
 
-Настройки Сheck уведомлений: http://ваш_домен/bitrix/tools/sale_ps_result.php?action=check  
-Настройки Pay уведомлений: http://ваш_домен/bitrix/tools/sale_ps_result.php?action=pay  
-Настройки Fail уведомлений: http://ваш_домен/bitrix/tools/sale_ps_result.php?action=fail  
-Настройки Void уведомлений: http://ваш_домен/bitrix/tools/sale_ps_result.php?action=void  
-Настройки Confirm уведомлений: http:/ваш_домен/bitrix/tools/sale_ps_result.php?action=confirm  
-Настройки Refund уведомлений: http://ваш_домен/bitrix/tools/sale_ps_result.php?action=refund  
+Настройки Сheck уведомлений: https://ваш_домен/bitrix/tools/sale_ps_result.php?action=check  
+Настройки Pay уведомлений: https://ваш_домен/bitrix/tools/sale_ps_result.php?action=pay  
+Настройки Fail уведомлений: https://ваш_домен/bitrix/tools/sale_ps_result.php?action=fail  
+Настройки Void уведомлений: https://ваш_домен/bitrix/tools/sale_ps_result.php?action=void  
+Настройки Confirm уведомлений: https://ваш_домен/bitrix/tools/sale_ps_result.php?action=confirm  
+Настройки Refund уведомлений: https://ваш_домен/bitrix/tools/sale_ps_result.php?action=refund  
 где **ваш_домен** нужно заменить на домен вашего сайта.  
 
 #### Changelog
